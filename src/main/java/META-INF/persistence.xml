@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Enchere">
+	
+		 
+	<jta-data-source>java:/spring</jta-data-source>
+	<class>com.enchere.models.Annonces</class>
+	<class>com.enchere.models.Appartement</class>
+	<class>com.enchere.models.Bateau</class>
+	<class>com.enchere.models.Camion</class>
+	<class>com.enchere.models.CategorieAnnonces</class>
+	<class>com.enchere.models.Client</class>
+	<class>com.enchere.models.Governorat</class>
+	<class>com.enchere.models.Immoblier</class>
+	<class>com.enchere.models.Maison</class>
+	<class>com.enchere.models.MaisonEnfant</class>
+	<class>com.enchere.models.Marque</class>
+	<class>com.enchere.models.Moto</class>
+	<class>com.enchere.models.Multimedia</class>
+	<class>com.enchere.models.Photo</class>
+	<class>com.enchere.models.Terrain</class>
+	<class>com.enchere.models.TypeAnnonce</class>
+	<class>com.enchere.models.Vehicule</class>
+	<class>com.enchere.models.Voiture</class>
+	
+	<properties>
+	<property name="hibernate.hbm2ddl.auto" value="update"/>
+	<property name="hibernate.show_sql" value="true"/>
+	<property name="hibernate.format_sql" value="true"/>
+	</properties>
+	</persistence-unit>
+</persistence>

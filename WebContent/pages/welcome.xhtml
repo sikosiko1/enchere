@@ -1,0 +1,202 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/templateV2.xhtml">
+
+	<ui:define name="pageTitle">Welcome Page</ui:define>
+	<ui:define name="pageContent">
+		<div class="body home">
+			<div>
+				<div class="featured">
+					<div>
+						<h2>
+							We Are The <br /> Champions
+						</h2>
+						<p>Aliquam at neque diam. Nulla facilisi. Donec cursus lacus
+							id urna mattis vestibulum. Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit.</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<h3>Latest Videos</h3>
+						<span><a href="videos.html">View More Videos</a></span>
+						<ul>
+							<li><a href="videos.html"><img
+									src="resources/images/video1.jpg" alt="" /></a>
+								<h4>Proin pellentesque convallis sapien a congue.</h4>
+								<p>Aliquam at neque diam. Nulla facilisi. Donec cursus lacus
+									id urna mattis vestibulum.</p></li>
+							<li><a href="videos.html"><img
+									src="resources/images/video2.jpg" alt="" /></a>
+								<h4>Lorem ipsum consectetur adipiscing elit.</h4>
+								<p>Donec cursus lacus id urna mattis vestibulum. Turpis ac
+									malesuada aliquet, est tellus blandit tellus, eu dignissim arcu
+									diam non orci.</p></li>
+							<li><a href="videos.html"><img
+									src="resources/images/video3.jpg" alt="" /></a>
+								<h4>Donec cursus lacus id urna mattis vestibulum.</h4>
+								<p>Fusce sagittis, turpis ac malesuada aliquet, est tellus
+									blandit tellus, eu dignissim arcu diam non orci.</p></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Featured</h3>
+						<span><a href="news.html">View More Featured</a></span>
+						<ul>
+							<li><a href="news.html"><img
+									src="resources/images/featured1.jpg" alt="" /></a>
+								<h4>Proin pellentesque convallis sapien a congue.</h4>
+								<p>Aliquam at neque diam. Nulla facilisi. Donec cursus lacus
+									id urna mattis vestibulum.</p></li>
+							<li><a href="news.html"><img
+									src="resources/images/featured2.jpg" alt="" /></a>
+								<h4>Lorem ipsum consectetur adipiscing elit.</h4>
+								<p>Donec cursus lacus id urna mattis vestibulum. Turpis ac
+									malesuada aliquet, est tellus blandit tellus, eu dignissim arcu
+									diam non orci.</p></li>
+							<li><a href="news.html"><img
+									src="resources/images/featured3.jpg" alt="" /></a>
+								<h4>Donec cursus lacus id urna mattis vestibulum.</h4>
+								<p>Fusce sagittis, turpis ac malesuada aliquet, est tellus
+									blandit tellus, eu dignissim arcu diam non orci.</p></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Groups</h3>
+
+						<ul>
+							<li>
+								<h4>GroupA</h4> <h:form id="listTeamA">
+
+
+									<h:dataTable value="#{teamBean.listTeamA()}" var="t"
+										class="table table-striped table-bordered table-hover dataTable no-footer"
+										rowClasses="gradeA odd, gradeA even">
+
+										<h:column>
+											<!-- column header -->
+											<f:facet name="header">Team</f:facet>
+											<!-- row record -->
+    				#{t.name}
+    				
+    			</h:column>
+										<h:column>
+											<f:facet name="header">point</f:facet>
+    				##{t.point}
+    			</h:column>
+									</h:dataTable>
+
+								</h:form>
+							</li>
+							<li>
+								<h4>GroupB</h4> <h:form id="listTeamB">
+
+
+									<h:dataTable value="#{teamBean.listTeamB()}" var="tB"
+										class="table table-striped table-bordered table-hover dataTable no-footer"
+										rowClasses="gradeA odd, gradeA even">
+
+										<h:column>
+											<!-- column header -->
+											<f:facet name="header">Team</f:facet>
+											<!-- row record -->
+    				#{tB.name}
+    				
+    			</h:column>
+										<h:column>
+											<f:facet name="header">point</f:facet>
+    				##{tB.point}
+    			</h:column>
+									</h:dataTable>
+
+								</h:form>
+							</li>
+
+							<li>
+								<h4>GroupC</h4> <h:form id="listTeamC">
+
+
+									<h:dataTable value="#{teamBean.listTeamC()}" var="tC"
+										class="table table-striped table-bordered table-hover dataTable no-footer"
+										rowClasses="gradeA odd, gradeA even">
+
+										<h:column>
+											<!-- column header -->
+											<f:facet name="header">Team</f:facet>
+											<!-- row record -->
+    				#{tC.name}
+    				
+    			</h:column>
+										<h:column>
+											<f:facet name="header">point</f:facet>
+    				##{tC.point}
+    			</h:column>
+									</h:dataTable>
+
+								</h:form>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<h4>Groupe D</h4> <h:form id="listTeamD">
+
+
+									<h:dataTable value="#{teamBean.listTeamD()}" var="tD"
+										class="table table-striped table-bordered table-hover dataTable no-footer"
+									rowClasses="gradeA odd, gradeA even">
+
+										<h:column>
+											<!-- column header -->
+											<f:facet name="header">Team</f:facet>
+											<!-- row record -->
+    				#{tD.name}
+    				
+    			</h:column>
+										<h:column>
+											<f:facet name="header">point</f:facet>
+    				#{tD.point}
+    			</h:column>
+									</h:dataTable>
+
+								</h:form>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="sidebar">
+				<div class="news">
+
+					<ui:include src="/pages/latestNews.xhtml" />
+
+
+
+				</div>
+				<div class="section">
+					<ui:include src="/pages/gameSchedule.xhtml" />
+				</div>
+				<div>
+					<span>Destination</span>
+					<ul>
+						<li><a href="stadium.jsf"><img
+								src="../resources/images/brazil-world-cup-st.jpg"
+								alt="Stadium lis" /></a></li>
+
+					</ul>
+
+				</div>
+				<div>
+					<ui:include src="/pages/latestTweet.xhtml" />
+
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
