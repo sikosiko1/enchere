@@ -1,11 +1,15 @@
 package com.enchere.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import com.enchere.models.Annonces;
+import com.enchere.models.CategorieAnnonces;
 
 @Repository
 public class AnnoncesDao implements IAnnonceDao {
@@ -40,8 +44,20 @@ public class AnnoncesDao implements IAnnonceDao {
 	@Override
 	public Annonces findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		TypedQuery<Annonces> query = em.createNamedQuery("findAnnonceById",
+				Annonces.class);
+		query.setParameter("id", id);
+
+		return query.getSingleResult();	}
+
+	@Override
+	public List<Annonces> retrieveAnnoncesByIdCategorie(int idAnnonce) {
+		// TODO Auto-generated method stub
+		TypedQuery<Annonces> query = em.createNamedQuery("findListAnnoncesByCategorieId",
+				Annonces.class);
+		query.setParameter("idAnnonce", idAnnonce);
+
+		return query.getResultList();	}	
 
 
 

@@ -45,7 +45,7 @@
   </property>
   <property name="jpaProperties">
    <props>
-    <prop key="hibernate.hbm2ddl.auto">create</prop><!-- create -->
+    <prop key="hibernate.hbm2ddl.auto">update</prop><!-- create -->
     <prop key="hibernate.current_session_context_class">thread</prop>
     <prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
     <prop key="hibernate.show_sql">true</prop>

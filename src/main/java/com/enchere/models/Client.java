@@ -96,7 +96,7 @@ public class Client {
 	}
 
 	public Client(String email, String login, String motDePasse, String nom,
-			String prenom, int telephone, List<Annonces> annonces) {
+			String prenom, int telephone) {
 		super();
 		this.email = email;
 		this.login = login;
@@ -104,6 +104,17 @@ public class Client {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
-		this.annonces = annonces;
+	}
+
+	public Client(Client user) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.email = user.getEmail();
+		this.login = user.getLogin();
+		this.motDePasse = user.getMotDePasse();
+		this.nom = user.getNom();
+		this.prenom =  user.getPrenom();
+		this.telephone = user.getTelephone();
+
 	}
 }

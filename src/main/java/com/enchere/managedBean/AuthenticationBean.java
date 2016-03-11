@@ -1,7 +1,8 @@
 package com.enchere.managedBean;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,64 +13,45 @@ import com.enchere.models.Client;
 import com.enchere.service.IClientManager;
 
 
-@ManagedBean(name = "authBean")
-@SessionScoped
 @Component
-public class AuthenticationBean {
+@ManagedBean(name = "authBean")
+public class AuthenticationBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Autowired
-IClientManager iClientManager;
-	
+	IClientManager iClientManager;
 
 	private boolean loggedIn = false;
-	
-	
+
 	private Client user = new Client();
 
-	
-	
-	
 	public String doLogIn() {
 
-		
 		String page = null;
-		try {
 
-			user = iClientManager.retrieveByCredentials(user.getLogin(),
-					user.getMotDePasse());
+			try {
+				
+				System.out.println("DEbut");
+
+				user = iClientManager.retrieveByCredentials(user.getLogin(),
+						user.getMotDePasse());
+				
+				System.out.println(user.getEmail());
+			} catch (BadCredentialException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			loggedIn = true;
 
-			page= "pages/success?faces-redirect=true";
-			
-		} catch (BadCredentialException ex) {}
-//			try {
-//				user = journalisteDao.retrieveByCredentials(user.getLogin(),
-//						user.getPwd());
-//				if (((Journaliste) user).isActivate()) {
-//					loggedIn = true;
-//					return "welcome?faces-redirect=true";
-//
-//				} else {
-//					return "notactivated";
-//				}
-//			} catch (BadCredentialException dd) {
-//				try {
-//					user = internauteDao.retrieveByCredentials(user.getLogin(),
-//							user.getPwd());
-//					loggedIn = true;
-//					return "welcome?faces-redirect=true";
-//				} catch (BadCredentialException rd) {
-//
-//					FacesContext.getCurrentInstance().addMessage(
-//							"formLogin:authFormMsg",
-//							new FacesMessage("Bad Credentials",
-//									"Please fill in good ones"));
-//					return "welcome?faces-redirect=true";
-//				}
-//			}
-		//}
-return page;
+			page = "pages/index?faces-redirect=true";
+
+	
+		return page;
 	}
 
 	public String doLogOut() {
@@ -95,6 +77,5 @@ return page;
 	public void setUser(Client user) {
 		this.user = user;
 	}
-
 
 }

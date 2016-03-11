@@ -1,5 +1,7 @@
 package com.enchere.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,25 +14,25 @@ import com.enchere.models.Annonces;
 public class AnnonceManager implements IAnnonceManager{
 
 	@Autowired
-	private IAnnonceDao IAnnonceDAO;
+	private IAnnonceDao iAnnonceDAO;
 	@Override
 	public boolean create(Annonces annonce) {
 		// TODO Auto-generated method stub
-		IAnnonceDAO.create(annonce);
+		iAnnonceDAO.create(annonce);
 		return true;
 	}
 
 	@Override
 	public boolean update(Annonces annonce) {
 		// TODO Auto-generated method stub
-		IAnnonceDAO.update(annonce);
+		iAnnonceDAO.update(annonce);
 		return true;
 	}
 
 	@Override
 	public boolean delete(Annonces annonce) {
 		// TODO Auto-generated method stub
-		IAnnonceDAO.delete(annonce);
+		iAnnonceDAO.delete(annonce);
 		return true;
 	}
 
@@ -38,7 +40,13 @@ public class AnnonceManager implements IAnnonceManager{
 	public Annonces findById(int id) {
 		// TODO Auto-generated method stub
 		
-		return IAnnonceDAO.findById(id);
+		return iAnnonceDAO.findById(id);
+	}
+
+	@Override
+	public List<Annonces> retrieveAnnoncesByIdCategorie(int id) {
+		// TODO Auto-generated method stub
+		return iAnnonceDAO.retrieveAnnoncesByIdCategorie(id);
 	}
 	
 	

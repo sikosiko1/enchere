@@ -9,11 +9,21 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Null;
+
 
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@NamedQueries({
+	@NamedQuery(name = "findAnnonceById", query = "select a from Annonces a where a.id= :id"),
+	@NamedQuery(name = "findListAnnoncesByCategorieId", query = "select l from Annonces l where l.categorie.id= :idAnnonce"),
+	
+
+})
 public class Annonces {
 
 	
@@ -21,6 +31,8 @@ public class Annonces {
 private int id;
 private String titre;
 private String description;
+
+
 private float prix;
 private Governorat governorat;
 private List<Photo> photos;
@@ -48,6 +60,9 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
+
+
+@Null
 public float getPrix() {
 	return prix;
 }
@@ -55,6 +70,7 @@ public void setPrix(float prix) {
 	this.prix = prix;
 }
 
+@Null
 @ManyToOne
 public Governorat getGovernorat() {
 	return governorat;
@@ -63,6 +79,7 @@ public void setGovernorat(Governorat governorat) {
 	this.governorat = governorat;
 }
 
+@Null
 @OneToMany(mappedBy="annonces")
 public List<Photo> getPhotos() {
 	return photos;
@@ -80,6 +97,7 @@ public void setClient(Client client) {
 	this.client = client;
 }
 
+@Null
 @ManyToOne
 public TypeAnnonce getTypeAnnonce() {
 	return typeAnnonce;
@@ -89,6 +107,7 @@ public void setTypeAnnonce(TypeAnnonce typeAnnonce) {
 }
 
 
+@Null
 @ManyToOne
 public CategorieAnnonces getCategorie() {
 	return categorie;

@@ -20,6 +20,7 @@ com\enchere\models\Governorat.class
 com\enchere\service\ICategorieAnnonceManager.class
 com\enchere\models\Maison.class
 com\enchere\dao\CategorieAnnoncesDao.class
+com\enchere\Exceptions\BadCredentialException.class
 com\enchere\dao\TypeAnnonceDao.class
 com\enchere\service\VheiculeManager.class
 com\enchere\service\CategorieAnnonceManager.class
@@ -40,6 +41,7 @@ com\enchere\service\AppartementManager.class
 com\enchere\service\IElectromenagerManager.class
 com\enchere\service\MarqueManager.class
 com\enchere\models\Terrain.class
+com\enchere\managedBean\AuthenticationBean.class
 com\enchere\dao\IBateauDao.class
 com\enchere\service\IImmobilierManager.class
 com\enchere\service\BateauManager.class
@@ -82,10 +84,13 @@ com\enchere\service\IMotoManager.class
 com\enchere\dao\ITypeAnnonceDao.class
 com\enchere\dao\IAppartementDao.class
 com\enchere\service\CamionManager.class
+com\enchere\managedBean\AddAnnoncesBean.class
+com\enchere\managedBean\CategoriesBean.class
 com\enchere\dao\IMultimediaDao.class
 com\enchere\dao\IClientDao.class
 com\enchere\service\IAnnonceManager.class
 com\enchere\models\Marque.class
+com\enchere\Exceptions\LoginInvalideException.class
 com\enchere\service\IGovernoratManager.class
 com\enchere\dao\IMaisonDao.class
 com\enchere\dao\IMaisonEnfantDao.class
